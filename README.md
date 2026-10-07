@@ -1,4 +1,28 @@
-# Product Video Skills
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/logo-dark.svg">
+    <img alt="Product Video Skills" src="assets/logo-light.svg" width="440">
+  </picture>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/status-work%20in%20progress-orange" alt="status: work in progress">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-Apache%202.0-blue" alt="license: Apache 2.0"></a>
+  <img src="https://img.shields.io/badge/Claude%20Code-2.1%2B-d97757" alt="Claude Code 2.1+">
+  <img src="https://img.shields.io/badge/node-%3E%3D22-brightgreen" alt="node >= 22">
+  <a href="https://github.com/heygen-com/hyperframes"><img src="https://img.shields.io/badge/built%20on-HyperFrames-6366F1" alt="built on HyperFrames"></a>
+</p>
+
+<h3 align="center">Read your code. Rebuild your UI. Render the demo.</h3>
+
+<p align="center">
+  <a href="#installation-15-minute-setup">Install</a> |
+  <a href="#why-these-skills-exist">Why</a> |
+  <a href="#reference">Skills</a> |
+  <a href="#what-your-product-needs-to-provide">Inputs</a> |
+  <a href="#roadmap">Roadmap</a> |
+  <a href="CONTRIBUTING.md">Contributing</a>
+</p>
 
 Agent skills that turn your product's real source code into narrated product videos: demos for a pitch, walkthroughs for your docs, tutorials for your users.
 
@@ -7,7 +31,7 @@ No screen recordings and no invented UI. The skills rebuild your interface 1:1 i
 They come out of a real production: five narrated product demos, 26 versions and 33 renders. Every rule in them exists because something went wrong without it.
 
 > [!IMPORTANT]
-> **Status: early, not usable yet.** This README describes the target. Phase 1 (setup, the example product and the self-check) is in progress. The [Roadmap](#roadmap) says what works today.
+> **Work in progress: the skills are being written.** This README is the design, and nothing is installable yet. The [Roadmap](#roadmap) says what exists today.
 
 ## Installation (15-minute setup)
 
