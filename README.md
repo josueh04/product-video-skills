@@ -13,20 +13,9 @@
   <a href="https://github.com/heygen-com/hyperframes"><img src="https://img.shields.io/badge/built%20on-HyperFrames-6366F1" alt="built on HyperFrames"></a>
 </p>
 
-<h3 align="center">Read your code. Rebuild your UI. Render the demo.</h3>
 
-<p align="center">
-  <a href="#installation-15-minute-setup">Install</a> |
-  <a href="#why-these-skills-exist">Why</a> |
-  <a href="#reference">Skills</a> |
-  <a href="#what-your-product-needs-to-provide">Inputs</a> |
-  <a href="#roadmap">Roadmap</a> |
-  <a href="CONTRIBUTING.md">Contributing</a>
-</p>
+https://github.com/user-attachments/assets/31576d87-7361-4777-8c02-1100b982f57f
 
-
-
-<div style="position: relative; padding-bottom: 56.2500%; height: 0;"><iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" src="https://www.tella.tv/video/vid_cmuyf2jkq004b05nt2wz88lcp/embed?b=0&title=0&a=1&loop=0&t=0&muted=0&wt=0" allow="autoplay; fullscreen" allowtransparency></iframe></div>
 
 
 
