@@ -1,0 +1,20 @@
+# Local work: each product is its own git repository
+products/
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Toolchain installed by setup
+node_modules/
+.venv/
+vendor/
+
+# Outputs
+renders/
+*.mp4
+
+# System
+.DS_Store
+__pycache__/
