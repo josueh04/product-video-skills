@@ -1,0 +1,4 @@
+id	role	speed	text
+# one clip per sentence; build.py anchors beats to these words
+N1	narrator	1.0	Every morning, your plan for the day is ready before you open the app.
+N2	narrator	1.0	Type a task, and it lands in the right slot.

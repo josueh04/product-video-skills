@@ -1,0 +1,23 @@
+{
+  "skill_name": "video-review",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "/video-review pitch: the start is too zoomed in, keep it full page like the tour video. tour: at 1:02 the repeat picker is cut off by the edge. All videos: you never explain that reminders can repeat.",
+      "expected_output": "Asks whether this is the whole batch, runs feedback_table.py, fills meaning and acceptance per note, treats the reminders note as a rule for every video, bumps each video with notes, launches one fix subagent per video in parallel with the fix prompt, checks parity and QA itself, delivers and reports one table.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "/video-review feedback.txt",
+      "expected_output": "Reads the file, consolidates it per video, lists videos with no notes as untouched, and asks at most three closed decisions before launching fixers.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "one more thing on the pitch video: say 'plans your week' instead of 'plans your day'",
+      "expected_output": "Adds the note to the current round instead of starting a separate fix, checks CLAIMS.md and the code for whether the claim is backed, and asks a closed question if it is not.",
+      "files": []
+    }
+  ]
+}

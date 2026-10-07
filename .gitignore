@@ -18,3 +18,4 @@ renders/
 # System
 .DS_Store
 __pycache__/
+.claude/skills/

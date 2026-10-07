@@ -1,0 +1,23 @@
+{
+  "skill_name": "script-and-voice",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "The brief and coverage for products/acme/videos/pitch are signed. Write the narration for the 60 second pitch and generate the voice. I don't have an ElevenLabs key yet, so use the Mac voice for now.",
+      "expected_output": "A moment table under ## Script in BRIEF.md and audio/lines.tsv (header id, role, speed, text; one clip per sentence; roles from product.yaml; numbers written as words; opening says what Acme Tasks is, chapters explain the features COVERAGE.md marks must explain, last line a complete sentence with the CLAIMS.md positioning). check_script.py passes. tts.py runs with --provider say and writes audio/clips/*.wav and audio/timings.json; pronounce_check.py is run and its flags reported. The report lists clip durations and says the say voice is a draft that must be replaced before delivery.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Reviewer note on the acme pitch v2: the narrator says 'Ack-me' like 'acne' in N1 and N6, and the last line sounds cut off, like half a sentence. Fix only that.",
+      "expected_output": "Copies lines.tsv and timings.json to the v2 versions. Adds or changes product.pronounce for Acme (candidate respellings, optionally a vowel check with confusable), regenerates only the affected lines with tts.py --only, rewrites or re-reads the last line as a complete sentence at a slower speed via the speed column or a role variant, runs check_script.py and pronounce_check.py on those ids, stays within two takes per line, and reports which lines changed, their new durations and that the composer must rebuild. Does not touch other lines or edit timings.json by hand.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Add keyboard sounds when Maya types the task in chapter 2 of the acme pitch and a click when she presses Save. Maybe a whoosh on the chapter transitions too?",
+      "expected_output": "Uses make_sfx.py's typing_track() for the typed text with a duration equal to the typing beat and library_sfx('click') at the press, so files land in audio/sfx/ with CREDITS.md. Declines the whoosh and explains why (recorded sounds only, whooshes read as white noise over a UI demo), offering a silent title transition instead. Gives the composer the cue starts anchored to words in timings.json and the suggested volumes and tracks.",
+      "files": []
+    }
+  ]
+}

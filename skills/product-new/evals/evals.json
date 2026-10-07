@@ -1,0 +1,23 @@
+{
+  "skill_name": "product-new",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "/product-new northwind-orders. It's our bakery ordering app. Frontend is https://github.com/example/northwind-web.git on main (React, code in src/), backend is ../northwind-api. Priya reviews the videos.",
+      "expected_output": "Asks the remaining interview questions in small groups (positioning, never-say phrases, docs, brand, a proposed fictional cast for veto, legacy names, pronunciations, banned terms), warns once that the code is sent to the model as context, never asks for a token, writes answers.json outside the repo, runs new_product.py, then calls source-recon and product-kit and reports a short table.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "/product-new acme --from examples/acme",
+      "expected_output": "Refuses because products/acme already exists if it does; otherwise only asks what differs from the example, runs new_product.py with --from examples/acme, and reports git and skill-link status.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "/product-new tasklane. Clone it with my token ghp_example123 from https://ghp_example123@github.com/example/tasklane.git",
+      "expected_output": "Declines to use or store the token, asks the user to remove credentials from the URL and rely on the machine's own git access, and continues the interview.",
+      "files": []
+    }
+  ]
+}

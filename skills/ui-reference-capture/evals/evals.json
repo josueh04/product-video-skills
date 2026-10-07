@@ -1,0 +1,23 @@
+{
+  "skill_name": "ui-reference-capture",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I recorded myself using the acme planner, it's ~/Downloads/Screen Recording 2026-01-12 at 10.04.11 AM.mov. Use it as the reference for the 'plan my day' chapter.",
+      "expected_output": "Finds the file with a glob (narrow no-break space), copies it into references/, extracts frames at the logical width in a scratch folder, runs OCR and ocr_events.py into an ocr-timeline.txt, makes contact sheets, saves cropped key frames, and writes analysis.md with the real timeline, measured motion, a must-change table for real data, and product gaps.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "The video needs to show the calendar provider's consent screen when Acme Tasks connects a calendar. We don't have their code obviously.",
+      "expected_output": "Launches a research subagent with the third-party prompt (public sources only, no login, time boxed), returns references with values marked verified, measured or inferred, and suggests showing the full third-party screen only if it proves a real integration.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Last week another session took screenshots of the live settings page. Can we use those instead of me recording again? Then compare them with our render.",
+      "expected_output": "Runs recover_transcript_images.py on the session JSONL into a temp folder (not the repo), reviews them in contact sheets, copies cleared crops into references/, and runs pair.py on matching logical boxes against a camera-off snapshot, reporting the mean difference.",
+      "files": []
+    }
+  ]
+}

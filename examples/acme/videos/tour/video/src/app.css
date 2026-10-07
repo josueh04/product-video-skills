@@ -1,0 +1,72 @@
+/* ============================================================================
+   Acme Tasks rebuilt from specs/today.md and specs/add-dialog.md (frontend@1318473),
+   literal values. Tokens come from the product's kit/tokens.css (inlined before this file).
+   States the timeline switches: .hov .foc
+   ========================================================================== */
+#app { --pvs-backdrop: rgba(28, 29, 31, 0.36); background: #f7f7f5; color: #1c1d1f; font-family: "Inter", system-ui, sans-serif; font-size: 15px; line-height: 22px; }  /* frontend/styles/app.css:7-14, tokens.css:14 */
+#app * { box-sizing: border-box; }
+.icon { width: 18px; height: 18px; flex: 0 0 auto; display: inline-flex; }  /* frontend/styles/app.css:17-18 */
+
+/* SHELL (frontend/index.html:12-24, styles/app.css:20-39) */
+.shell { display: grid; grid-template-columns: 232px 1fr; height: 810px; }
+.sidebar { background: #ffffff; border-right: 1px solid #e4e4e0; padding: 20px 14px; }
+.brand { display: flex; align-items: center; gap: 10px; height: 36px; padding: 0 8px; margin-bottom: 20px; }
+.brand img { width: 30px; height: 30px; display: block; }
+.brand-name { font-weight: 700; font-size: 15px; letter-spacing: -0.1px; }
+.nav { display: flex; flex-direction: column; gap: 2px; }
+.nav-item { display: flex; align-items: center; gap: 10px; height: 38px; padding: 0 10px; border-radius: 6px; color: #6b6f76; }
+.nav-item.is-active { background: #e9f6f3; color: #0e7c6b; font-weight: 700; }
+
+/* TODAY (frontend/index.html:27-42, styles/app.css:42-86) */
+.main { padding: 40px 64px; }
+.page-head { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; max-width: 920px; }
+.page-title { margin: 0; font-size: 30px; line-height: 38px; font-weight: 700; letter-spacing: -0.4px; }
+.page-date { color: #6b6f76; }
+.page-actions { margin-left: auto; display: flex; gap: 8px; }
+.btn { display: inline-flex; align-items: center; gap: 8px; height: 40px; padding: 0 16px; border-radius: 10px; font-weight: 700; font-size: 15px; white-space: nowrap; }
+.btn-primary { background: #0e7c6b; color: #ffffff; border: 1px solid #0e7c6b; }
+.btn-primary.hov { background: #0b6a5b; border-color: #0b6a5b; }
+.btn-secondary { background: #ffffff; border: 1px solid #e4e4e0; }
+.btn-secondary.hov { border-color: #c9cac4; }
+.btn-ghost { background: transparent; border: 1px solid transparent; color: #6b6f76; }
+.list-meta { display: flex; align-items: center; gap: 12px; height: 28px; margin-bottom: 12px; color: #6b6f76; font-size: 13px; }
+.planned-chip { display: none; align-items: center; gap: 6px; height: 26px; padding: 0 10px; border-radius: 13px; background: #e9f6f3; color: #0e7c6b; font-weight: 700; }
+.planned-chip .icon { width: 15px; height: 15px; }
+.task-list { position: relative; display: flex; flex-direction: column; gap: 8px; max-width: 920px; margin: 0; padding: 0; list-style: none; }
+.task { display: flex; align-items: center; gap: 14px; height: 56px; padding: 0 18px; border-radius: 10px; background: #ffffff; border: 1px solid #e4e4e0; box-shadow: 0 1px 2px rgba(28, 29, 31, 0.04); }
+.task-check { width: 20px; height: 20px; border-radius: 50%; border: 2px solid #c9cac4; flex: 0 0 auto; }
+.task-title { flex: 1 1 auto; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.task-project { font-size: 13px; color: #6b6f76; background: #f7f7f5; border-radius: 6px; padding: 2px 8px; }
+.task-time { width: 84px; text-align: right; color: #6b6f76; font-variant-numeric: tabular-nums; }
+#rowNew, #count5 { display: none; }
+
+/* ADD TASK DIALOG (frontend/index.html:46-77, styles/app.css:89-120); centred by .pvs-modal */
+.dialog { width: 480px; padding: 24px; border-radius: 16px; background: #ffffff; box-shadow: 0 24px 60px rgba(28, 29, 31, 0.22); }
+.dialog-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px; }
+.dialog-title { margin: 0; font-size: 18px; line-height: 26px; font-weight: 700; }
+.icon-btn { width: 32px; height: 32px; display: grid; place-items: center; border-radius: 6px; color: #6b6f76; }
+.field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
+.field-row { display: flex; gap: 12px; }
+.field-row .field-time { width: 160px; }
+.field-row .field-project { flex: 1 1 auto; }
+.field-label { font-size: 13px; font-weight: 700; color: #6b6f76; }
+.input { display: flex; align-items: center; height: 44px; padding: 0 14px; border-radius: 10px; border: 1px solid #e4e4e0; background: #ffffff; color: #1c1d1f; white-space: pre; }
+.input.foc { border-color: #0e7c6b; box-shadow: 0 0 0 3px rgba(14, 124, 107, 0.18); }
+.input .ph { color: #6b6f76; }
+.dialog-foot { display: flex; justify-content: flex-end; gap: 8px; margin-top: 8px; }
+/* FIX: the app's Project field is a native select; drawn here as the .input box with a chevron (spec Fixes) */
+.input.select { justify-content: space-between; }
+.input .chev { width: 8px; height: 8px; border-right: 2px solid #6b6f76; border-bottom: 2px solid #6b6f76; transform: translateY(-2px) rotate(45deg); }
+
+/* TOAST (styles/app.css:123-128): bottom 32px, centred */
+.pvs-toast-slot { bottom: 32px; }
+.toast { padding: 12px 18px; border-radius: 10px; background: #1c1d1f; color: #ffffff; box-shadow: 0 12px 30px rgba(28, 29, 31, 0.25); white-space: nowrap; }
+
+/* END SCREEN pieces: the real row and toast at card width (screen space, outside #app, so box-sizing is set here) */
+.pvs-card-ui * { box-sizing: border-box; }
+.pvs-card { width: 500px; height: 320px; }                 /* two cards: wider than the kit default so full titles fit */
+.pvs-card-ui { transform: scale(1.15); }
+.pvs-card-ui .task { width: 386px; }                         /* 444 px inner width / 1.15 */
+.pvs-card-ui .task + .task { margin-top: 8px; }
+.pvs-card-ui .planned-chip { display: inline-flex; margin-bottom: 10px; }
+.pvs-card-ui .toast { display: inline-block; }

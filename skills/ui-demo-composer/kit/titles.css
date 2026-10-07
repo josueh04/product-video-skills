@@ -1,0 +1,42 @@
+/* ============================================================================
+   Titles, end screen and lockup (screen space, 1920x1080).
+
+   Every title line sits inside a .pvs-mask so it can enter and leave through
+   its own mask (stage.js lineIn / lineOut). Two-tone titles put the second
+   tone in an <em>, coloured with --pvs-accent. All colours are variables so a
+   product's tokens.css can theme them.
+   ========================================================================== */
+.pvs-ttl { position: absolute; left: 0; right: 0; top: 0; height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center; pointer-events: none; text-align: center; }
+.pvs-mask { overflow: hidden; padding: 6px 20px 14px; }
+.pvs-ln { display: block; white-space: nowrap; }
+.pvs-ln em { font-style: normal; color: var(--pvs-accent); }
+
+/* opening: logo, product name, a one or two line subtitle */
+.pvs-opLogo { height: 52px; width: auto; display: block; }
+.pvs-opT { font-size: 150px; font-weight: 700; letter-spacing: -5px; line-height: 168px; color: var(--pvs-title); }
+.pvs-opS { font-size: 40px; font-weight: 400; line-height: 56px; letter-spacing: -0.5px; color: var(--pvs-sub); }
+.pvs-opS b { font-weight: 600; color: var(--pvs-title); }
+
+/* chapter title: one line, 96 px, two tones */
+.pvs-chT { font-size: 96px; font-weight: 600; letter-spacing: -2.5px; line-height: 112px; color: var(--pvs-title); }
+.pvs-chK { font-size: 24px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: var(--pvs-accent); }
+
+/* end screen: a headline and cards that each name one capability with a real UI piece */
+#endS { position: absolute; inset: 0; pointer-events: none; }
+#endS > .pvs-end-bg { position: absolute; inset: 0; background: var(--pvs-end-bg); }
+/* headline and cards are one centred column, so 1, 2, 3 or 4 cards stay balanced */
+#endS > .pvs-end-content { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 56px; }
+.pvs-eHead { display: flex; justify-content: center; }
+.pvs-eHead .pvs-ln { font-size: 72px; font-weight: 600; letter-spacing: -1.8px; line-height: 86px; color: var(--pvs-title); }
+.pvs-cards { display: flex; justify-content: center; gap: 48px; max-width: 1800px; }
+.pvs-card { width: 404px; height: 292px; box-sizing: border-box; border-radius: 22px; background: var(--pvs-card-bg); border: 1px solid var(--pvs-card-border); padding: 28px 28px 0; overflow: hidden; }
+.pvs-card-h { font-size: 32px; font-weight: 600; letter-spacing: -0.5px; line-height: 40px; color: var(--pvs-title); }
+.pvs-card-s { font-size: 20px; line-height: 28px; color: var(--pvs-sub); margin-top: 6px; }
+.pvs-card-ui { margin-top: 22px; transform-origin: 0 0; }
+
+/* lockup: logo, tagline, one line, the URL */
+#lock { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; pointer-events: none; text-align: center; }
+.pvs-lkLogo { height: 64px; width: auto; display: block; }
+.pvs-lkT { font-size: 150px; font-weight: 700; line-height: 162px; letter-spacing: -5px; color: var(--pvs-accent); margin-top: 30px; }
+.pvs-lkS { font-size: 52px; font-weight: 500; line-height: 66px; letter-spacing: -1px; color: var(--pvs-title); margin-top: 14px; }
+.pvs-lkU { font-size: 28px; letter-spacing: 1px; color: var(--pvs-muted); margin-top: 34px; }

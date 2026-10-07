@@ -1,0 +1,23 @@
+{
+  "skill_name": "video-new",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "/video-new pitch --format pitch. It's a 90 second demo of Acme Tasks for our seed deck; the reviewer cares most about Plan my day, recurring tasks and shared lists.",
+      "expected_output": "Runs new_video.py for videos/pitch, writes BRIEF.md, a COVERAGE.md where each of the three features is marked to be explained on screen with a chapter and a proof, a CLAIMS.md with the positioning from product.yaml and phrases to avoid, proposes chapters, shows at most three closed decisions, asks the reviewer to sign, and does not build.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "/video-new onboarding --format tutorial and then just build it, I trust you, sign it for me.",
+      "expected_output": "Creates the folder and writes the sheets, but does not sign on its own and does not build: explains that the reviewer signs (their name or an explicit instruction naming who signs) and that building is /video-build typed by the user.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "I read the coverage and claims for the pitch video. Sign both as Maya Lindqvist.",
+      "expected_output": "Runs sign.py with --coverage and --claims set to Maya Lindqvist, reports the status line, and points to /video-build as the next step.",
+      "files": []
+    }
+  ]
+}

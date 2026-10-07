@@ -1,0 +1,23 @@
+{
+  "skill_name": "ui-spec-from-code",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "SOURCES.md for the acme pitch is done. Get me exact specs for the board screen and the task detail drawer so the build agent can write app.css.",
+      "expected_output": "Reads the framework adapter, writes or reuses kit/render-facts.md and runs resolve_tokens.py for the video's theme, launches one read-only subagent per screen with the ui-spec prompt, and writes specs/board.md, specs/task-drawer.md and their .html with literal CSS values each cited role/path:line@sha, states, motion with durations and easings, icons, strings, a fixes table and a not-verified list.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Extract the design tokens of our React + Tailwind app into the kit, dark theme.",
+      "expected_output": "Runs resolve_tokens.py with the dark scope selector, explains UNDEFINED and needs-a-Sass-compile flags and skipped Tailwind presets or functions, tells the user the React and Tailwind adapters are unproven, and records render facts.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "The rebuilt settings page looks slightly off compared to the real app, the paddings and the font size feel bigger. Figure out why.",
+      "expected_output": "Checks the runtime root font size and rem conversion, undefined variables and fallbacks, encapsulation of overlays, and library defaults, citing the source for each corrected value, and updates the spec rather than eyeballing values.",
+      "files": []
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "product": {
+    "name": "Northwind Orders",
+    "positioning": "Northwind Orders takes bakery orders while the oven is busy.",
+    "never_say": ["the last app you will ever need", "AI-powered"],
+    "names": {"Northwind Orders": ["NW Orders", "OrderBox"]},
+    "pronounce": {"Northwind": "NORTH-wind"},
+    "banned_terms": ["CompetitorCo"]
+  },
+  "sources": [
+    {"role": "frontend", "url": "https://github.com/example/northwind-web.git", "branch": "main", "app_dir": "src", "framework": "react"},
+    {"role": "backend", "path": "../northwind-api", "branch": "main"}
+  ],
+  "docs": ["https://docs.northwind.example"],
+  "brand": {"accent": "#B4532A", "font": "Inter"},
+  "cast": {
+    "company": {"name": "Juniper Street Bakery", "city": "Portland OR"},
+    "people": [
+      {"role": "owner", "name": "Maya Lindqvist", "email": "maya@juniper.example"},
+      {"role": "customer", "name": "Omar Haddad", "phone": "+1 503 555 0172"}
+    ]
+  },
+  "review": {"reviewer": "Priya Raman", "report_language": "en"}
+}

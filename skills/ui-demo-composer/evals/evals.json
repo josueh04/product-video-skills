@@ -1,0 +1,23 @@
+{
+  "skill_name": "ui-demo-composer",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "The specs for the Acme Tasks board and the task dialog are done (examples/acme). Build the pitch video's timeline: chapter 1 opens a task when the narrator says 'details', chapter 2 types a new task on 'add'. Voice isn't recorded yet, I just want to see the layout.",
+      "expected_output": "Writes beats in video/build.py with b.w()/end() anchored to the named words (no hand-typed seconds), the screens from specs in template.tpl and app.css at the app_canvas logical size, chapter titles over the racked-out product, the dialog via S.popupOpen at 1x and natural size, typing via S.type plus b.typing. Builds with --draft --fake-timings, runs lint_motion.py and hyperframes check, snapshots each setup beat (b.snap, --no-end --describe false) and reviews the frames; does not render or sign the brief.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Reviewer feedback on the Acme demo v2: 'the settings part is super zoomed in, I can't tell where we are on the page, and the ending flashes the app for a split second before the logo'.",
+      "expected_output": "Moves the settings beats back to 1x full page (removes or lowers b.cam calls above 1x, keeps at most a gentle push within max_zoom made behind a chapter title), keeps pop-ups centred at natural size, and uses S.lockup so only the end-screen content fades while its background stays until the lockup is in. Rebuilds, snapshots the setup beats and checks a 5-6 fps strip around the lockup handoff before rendering a draft.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Render the final MP4 of products/acme/videos/pitch.",
+      "expected_output": "Runs build.py without --draft; if BRIEF.md lacks coverage_signed_by or claims_signed_by it stops and explains the reviewer must sign (does not sign or offer --draft as a delivery path). When signed: lint, check, setup snapshots, then npx --yes hyperframes@0.8.134 render . -o renders/pitch-v<k>.mp4 --fps 30 --quality delivery from video/, and hands off to render-qa.",
+      "files": []
+    }
+  ]
+}

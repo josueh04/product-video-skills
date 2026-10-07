@@ -1,0 +1,51 @@
+# The example product of the Product Video Skills workbench. Everything here is fictional:
+# Acme Tasks, its code in frontend/, Northwind Bakery and its people.
+# `bash setup.sh` and tests/cases/example.sh build and render videos/tour/ from this folder.
+# Schema: docs/contracts.md section 2.
+product:
+  name: Acme Tasks
+  slug: acme
+  positioning: "Acme Tasks is the to-do list that plans your day."
+  never_say: ["the last app you will ever need"]
+  names:
+    Acme Tasks: ["AcmeTodo", "Acme To-Do"]
+  pronounce:
+    Acme: AK-mee
+  banned_terms: ["Planzo"]            # a fictional competitor, kept off screen and out of the narration
+sources:
+  - role: frontend
+    path: frontend                   # relative to this folder; not a repo of its own, so it is copied and pinned by hash
+    app_dir: .
+    framework: html
+docs: []
+app_canvas:
+  logical: [1440, 810]
+  theme: light
+  rem_px: 16
+brand:
+  accent: "#0E7C6B"                  # --acme-color-accent, frontend/styles/tokens.css
+  font: Inter
+  logo_light: kit/logos/logo-light.svg
+  logo_dark: kit/logos/logo-dark.svg
+  app_tile: kit/logos/app-tile.svg
+cast:
+  company: {name: Northwind Bakery, city: Portland OR, website: northwind.example}
+  people:
+    - {role: owner, name: Maya Lindqvist, email: maya@northwind.example}
+    - {role: customer, name: Omar Haddad, phone: "+1 503 555 0172", email: omar@example.com}
+voice:
+  provider: say                      # the free macOS voice, so the example needs no key
+  env_key: ELEVENLABS_API_KEY
+  roles:
+    narrator: {voice: "", model: eleven_multilingual_v2, say_voice: Samantha}
+  clip_lufs: -18
+  mix_lufs: -16
+video:
+  size: [1920, 1080]
+  fps: 30
+  max_zoom: 1.35
+  lang: en
+review:
+  reviewer: Example Reviewer
+  report_language: en
+  naming: "{product} {video} v{version}.mp4"

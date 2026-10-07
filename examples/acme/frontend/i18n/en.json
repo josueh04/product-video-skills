@@ -1,0 +1,22 @@
+{
+  "app.name": "Acme Tasks",
+  "app.tagline": "The to-do list that plans your day.",
+  "nav.today": "Today",
+  "nav.upcoming": "Upcoming",
+  "nav.projects": "Projects",
+  "today.title": "Today",
+  "today.plan": "Plan my day",
+  "today.planned": "Planned by time",
+  "today.add": "Add task",
+  "today.count": "{count} tasks",
+  "today.empty": "Nothing planned yet",
+  "dialog.title": "New task",
+  "dialog.name": "Task",
+  "dialog.name.placeholder": "What needs doing?",
+  "dialog.time": "Time",
+  "dialog.time.placeholder": "e.g. 3:00 PM",
+  "dialog.project": "Project",
+  "dialog.cancel": "Cancel",
+  "dialog.submit": "Add task",
+  "toast.added": "Added to Today at {time}"
+}

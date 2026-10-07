@@ -1,0 +1,50 @@
+# product.yaml: the single source of config for this product (schema: docs/contracts.md in the workbench).
+# /product-new fills it from the interview. Every key you leave out falls back to the workbench
+# default, so an old file keeps working. Replace each "<...>" value; leave a list empty if it does not apply.
+product:
+  name: "{{PRODUCT_NAME}}"           # the canonical name, exactly as it must appear on screen
+  slug: "{{PRODUCT_SLUG}}"           # folder name under products/, lowercase, no spaces
+  positioning: "<one sentence: what the product is, as the team says it>"
+  never_say: []                      # phrasings it must never be called, e.g. ["the last app you will ever need"]
+  names: {}                          # canonical name -> legacy strings that must not appear: {"Acme Tasks": ["AcmeTodo"]}
+  pronounce: {}                      # what the voice receives instead of the spelling: {"Acme": "AK-mee"}
+  banned_terms: []                   # never seen or heard: competitors, AI vendors, real customers, internal code names
+sources: []                          # zero or more repos; /product-new asks for them. Example:
+#  - role: frontend                  # short id, also the folder name in sources/
+#    url: https://github.com/example/acme-web.git   # or: path: ../acme-web
+#    branch: main                    # the branch that is in production
+#    app_dir: src                    # where the UI code lives inside the repo
+#    framework: react                # angular-primeng | react | vue | svelte | html | other
+#  - role: backend
+#    path: ../acme-api
+#    branch: main
+docs: []                             # URLs, repo paths or "mcp:<name>" (read-only)
+app_canvas:
+  logical: [1440, 810]               # the app viewport the UI is rebuilt at, scaled to 1920x1080
+  theme: light                       # light | dark
+  rem_px: 16
+brand:
+  accent: "<#RRGGBB from the design tokens>"
+  font: "<font family from the frontend>"
+  logo_light: kit/logos/logo-light.svg
+  logo_dark: kit/logos/logo-dark.svg
+  app_tile: kit/logos/app-tile.svg
+cast:                                # fictional only: 555 phone numbers, emails on example.com, .example or .test
+  company: {name: "<fictional company>", city: "<city>"}
+  people: []                         # e.g. - {role: owner, name: Maya Lindqvist, email: maya@northwind.example}
+voice:
+  provider: elevenlabs               # elevenlabs | say (macOS, free, no key: for tests and drafts)
+  env_key: ELEVENLABS_API_KEY        # read from the workbench .env by the voice script, never printed
+  roles:                             # the role column of audio/lines.tsv points here
+    narrator: {voice: "<elevenlabs voice id>", model: eleven_multilingual_v2, say_voice: Samantha}
+  clip_lufs: -18
+  mix_lufs: -16
+video:
+  size: [1920, 1080]
+  fps: 30
+  max_zoom: 1.35                     # push-ins stay gentle; full pages are framed at 1x
+  lang: en
+review:
+  reviewer: ""                       # who signs COVERAGE.md and CLAIMS.md
+  report_language: en
+  naming: "{product} {video} v{version}.mp4"

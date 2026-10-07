@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Run Python from the workbench virtualenv with lib/ on the import path.
+# Falls back to python3 when setup has not created .venv yet.
+set -euo pipefail
+here="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -P)"
+home="$(cd "$here/.." && pwd)"
+py="$home/.venv/bin/python"
+[ -x "$py" ] || py="$(command -v python3)"
+export PVS_HOME="$home"
+export PYTHONPATH="$home/lib${PYTHONPATH:+:$PYTHONPATH}"
+exec "$py" "$@"

@@ -1,0 +1,27 @@
+<!-- S1 unplanned (rows reorder for S2; S3 adds #rowNew). Source: frontend/index.html:12-42 -->
+<div class="shell">
+  <aside class="sidebar">
+    <div class="brand"><img src="{{APP_TILE}}" alt=""><span class="brand-name">Acme Tasks</span></div>
+    <nav class="nav">
+      <div class="nav-item is-active"><i data-icon="acme-sun" class="icon"></i><span>Today</span></div>
+      <div class="nav-item"><i data-icon="acme-calendar" class="icon"></i><span>Upcoming</span></div>
+      <div class="nav-item"><i data-icon="acme-folder" class="icon"></i><span>Projects</span></div>
+    </nav>
+  </aside>
+  <main class="main">
+    <header class="page-head">
+      <h1 class="page-title">Today</h1><span class="page-date">Tuesday, March 3</span>
+      <div class="page-actions">
+        <div class="btn btn-secondary" id="addTaskBtn"><i data-icon="acme-plus" class="icon"></i><span>Add task</span></div>
+        <div class="btn btn-primary" id="planBtn"><i data-icon="acme-sparkle" class="icon"></i><span>Plan my day</span></div>
+      </div>
+    </header>
+    <div class="list-meta"><span id="taskCount">4 tasks</span><span class="planned-chip" id="plannedChip"><i data-icon="acme-clock" class="icon"></i><span>Planned by time</span></span></div>
+    <ul class="task-list" id="taskList">
+      <li class="task" id="rowCake"><span class="task-check"></span><span class="task-title">Confirm the cake order with Omar Haddad</span><span class="task-project">Orders</span><span class="task-time">11:30 AM</span></li>
+      <li class="task" id="rowFlour"><span class="task-check"></span><span class="task-title">Order flour for Saturday</span><span class="task-project">Supplies</span><span class="task-time">2:00 PM</span></li>
+      <li class="task" id="rowBread"><span class="task-check"></span><span class="task-title">Bake the morning bread</span><span class="task-project">Kitchen</span><span class="task-time">6:00 AM</span></li>
+      <li class="task" id="rowInvoices"><span class="task-check"></span><span class="task-title">Send the weekly invoices</span><span class="task-project">Office</span><span class="task-time">4:30 PM</span></li>
+    </ul>
+  </main>
+</div>

@@ -1,0 +1,22 @@
+# Read-only exports of the product's repos, recreated from sources.lock
+/sources/
+
+# Renders and heavy intermediate files
+*.mp4
+renders/
+**/qa/sheets/
+**/qa/strips/
+**/audio/raw/
+
+# Links to the workbench, recreated by scripts/link-skills.sh <product_dir>
+.claude/skills/
+.claude/hooks
+
+# Secrets never live in a product folder (the key is in the workbench .env)
+.env
+.env.*
+!.env.example
+
+# System
+.DS_Store
+__pycache__/

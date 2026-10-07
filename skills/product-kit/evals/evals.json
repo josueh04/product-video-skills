@@ -1,0 +1,23 @@
+{
+  "skill_name": "product-kit",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Set up the kit for acme: tokens, the Inter font, the icons the pitch specs use, and the logos. We use lucide icons.",
+      "expected_output": "Checks sources are pinned, asks once for any downloads, runs resolve_tokens.py, subsets the fonts the app actually loads with subset_fonts.py (license recorded), copies the listed lucide SVGs with collect_icons.py (failing on missing names), copies logo variants from the repo into kit/logos with sources, updates brand keys in product.yaml, and reports the inventory.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "We need some fake customers for the demos. Something realistic, not John Doe.",
+      "expected_output": "Proposes one full fictional cast (company, city, full names with one surname each, 555-01xx numbers, reserved-domain emails) as a single closed question with a recommended default, writes it to product.yaml once approved (or frozen on silence), and runs check_cast.py.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "the old name AcmeTodo still shows in the sidebar of the app and the voice says 'ack-me' wrong. fix it for all videos",
+      "expected_output": "Adds AcmeTodo as a legacy string under the canonical name in product.yaml names, adds a pronounce entry for Acme, and greps specs, templates and lines.tsv for the legacy string, without changing the on-screen spelling of the brand word.",
+      "files": []
+    }
+  ]
+}

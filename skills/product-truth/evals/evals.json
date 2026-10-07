@@ -1,0 +1,23 @@
+{
+  "skill_name": "product-truth",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Here's the draft narration for the acme pitch in videos/pitch/audio/lines.tsv. Check every sentence is true before we record the voice.",
+      "expected_output": "Splits each line into claims, runs read-only fact subagents on sources/, writes TRUTH.md with one row per line id and per screen (citation role/path:line@sha or docs URL, visibility, verdict), rewrites or cuts unbacked lines in a proposal, runs truth_check.py until it passes, and reports rewrites, cuts and at most three closed questions.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "The reviewer wants the tutorial to show Acme Tasks auto-assigning tasks to teammates. Can we say that?",
+      "expected_output": "Checks the code and docs for auto-assignment, reports whether it exists, is gated or is backend-only with citations, and if it does not exist asks one closed 'only what's real' question with a recommended option instead of building a fake screen.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Our pitch deck says the app 'syncs with every calendar'. Use that line in the video.",
+      "expected_output": "Verifies which calendar integrations the code supports, rewrites the line to the supported set (or cuts it), checks never_say and CLAIMS.md, and records the verdict and source in TRUTH.md.",
+      "files": []
+    }
+  ]
+}

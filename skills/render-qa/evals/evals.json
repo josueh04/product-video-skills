@@ -1,0 +1,23 @@
+{
+  "skill_name": "render-qa",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "The render of the Acme Tasks pitch just finished: products/acme/videos/pitch/video/renders/pitch-v2.mp4. Is it clean enough to send to Maya?",
+      "expected_output": "Runs scan_render.py, then qa.py on the video folder, reads REPORT.md including warnings and ASR diffs, looks at every contact sheet, makes 5-6 fps strips at the modal, scroll, camera and end screen to lockup transitions, runs edges.py, and reports pass or fail with evidence. Does not deliver on its own; says deliver.py runs when the user asks.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "The reviewer says the opening title of the Acme Tasks video flickers for the first few seconds but it looks fine in the preview. Figure out why.",
+      "expected_output": "Runs scan_render.py on the render, finds a WORKER PATTERN run (outliers on one frame index mod 3) over the title, points to the seek-safe-motion skill, runs lint_motion.py to find the fromTo with keys only in fromVars, fixes the template (not index.html), rebuilds, re-renders and re-runs the QA gate.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "v3 of the Northwind Bakery tutorial only changes the beat from 41 to 48 s. Prove nothing else changed compared to the approved v2, then deliver v3.",
+      "expected_output": "Runs parity.py v2 v3 --skip 41:48 (and --audio), reports the max diff outside the skip (expected under 1.0), runs qa.py on v3, and only then runs deliver.py, which checks REPORT.json passed, not draft, sha256 match, names the file with review.naming and copies the BRIEF beside it.",
+      "files": []
+    }
+  ]
+}

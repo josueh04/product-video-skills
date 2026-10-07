@@ -1,0 +1,23 @@
+{
+  "skill_name": "video-build",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "/video-build pitch",
+      "expected_output": "Runs stages.py, stops if a signature is missing; otherwise dispatches background subagents in waves (source-recon, then product-truth and one ui-spec-from-code per screen in parallel, then script-and-voice, then one builder with the builder prompt), checks each stage's files with stages.py --require, re-runs qa.py itself with strips, delivers with deliver.py and reports one table. It never writes composition code or renders itself.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "/video-build",
+      "expected_output": "Lists the signed videos of the product whose current version has no delivery, confirms the list with one closed question, then builds them in parallel with one builder subagent per video.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "/video-build tour --draft, the reviewer hasn't signed yet but I want to see something.",
+      "expected_output": "Builds and QA-checks a draft, makes clear that deliver.py will refuse it until the reviewer signs, and does not attempt delivery.",
+      "files": []
+    }
+  ]
+}

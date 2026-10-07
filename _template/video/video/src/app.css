@@ -1,0 +1,47 @@
+/* ============================================================================
+   The product UI, rebuilt from specs/<screen>.md with literal values.
+
+   This example shell is a placeholder: replace every block with the CSS that
+   ui-spec-from-code returns, one comment per block naming its source, e.g.
+   "TASK ROW (frontend/src/components/TaskRow.tsx:12@abc1234)".
+   Design tokens come from the product's kit/tokens.css (inlined before this
+   file). States are extra classes the timeline switches: .hov .foc .sel .dis
+   ========================================================================== */
+#app { background: #f6f7f9; color: #111318; font-family: var(--pvs-font); font-size: 14px; line-height: 20px; }
+
+/* EXAMPLE SHELL: sidebar */
+.side { position: absolute; left: 0; top: 0; bottom: 0; width: 220px; box-sizing: border-box; padding: 20px 14px; background: #ffffff; border-right: 1px solid #e5e7eb; }
+.side-logo { height: 36px; margin: 0 0 18px 6px; }
+.side-logo img { height: 36px; width: 36px; display: block; }
+.nav { height: 36px; line-height: 36px; padding: 0 12px; border-radius: 8px; color: #4a4f59; font-weight: 500; }
+.nav.sel { background: #eef0ff; color: var(--pvs-accent); }
+
+/* EXAMPLE SHELL: page */
+.main { position: absolute; left: 220px; right: 0; top: 0; bottom: 0; padding: 36px 56px; box-sizing: border-box; }
+.top { display: flex; align-items: baseline; gap: 14px; margin-bottom: 22px; }
+.top h1 { margin: 0; font-size: 30px; line-height: 38px; font-weight: 700; letter-spacing: -0.4px; }
+.top .date { color: #6b7280; font-size: 16px; }
+.add { display: flex; align-items: center; gap: 12px; height: 52px; padding: 0 16px; border-radius: 12px; background: #ffffff; border: 1px solid #e5e7eb; margin-bottom: 18px; }
+.add.foc { border-color: var(--pvs-accent); box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15); }
+.add-plus { color: var(--pvs-accent); font-size: 22px; font-weight: 600; }
+.add-ph { color: #6b7280; }
+.add-in { color: #111318; white-space: pre; }
+.list { display: flex; flex-direction: column; gap: 10px; }
+.row { display: flex; align-items: center; gap: 14px; height: 56px; padding: 0 18px; border-radius: 12px; background: #ffffff; border: 1px solid #e5e7eb; }
+.row.hov { border-color: #c7cbd4; background: #fbfbfd; }
+.row.new { display: none; }
+.row .box { width: 18px; height: 18px; border-radius: 6px; border: 2px solid #c7cbd4; box-sizing: border-box; flex: 0 0 auto; }
+.row .tx { flex: 1 1 auto; white-space: nowrap; }
+.row .when { color: #6b7280; font-variant-numeric: tabular-nums; }
+.row.mini { width: 340px; box-sizing: border-box; }
+
+/* EXAMPLE SHELL: dialog (shown centred at natural size by .pvs-modal) */
+.dlg { width: 440px; box-sizing: border-box; padding: 22px 24px; border-radius: 16px; background: #ffffff; box-shadow: 0 24px 60px rgba(17, 19, 24, 0.22); }
+.dlg-h { display: flex; justify-content: space-between; align-items: center; font-size: 18px; font-weight: 600; margin-bottom: 14px; }
+.dlg-x { width: 28px; height: 28px; line-height: 28px; text-align: center; border-radius: 8px; color: #6b7280; font-size: 20px; }
+.dlg-r { display: flex; gap: 12px; padding: 8px 0; border-top: 1px solid #f0f1f4; }
+.dlg-r .k { width: 96px; color: #6b7280; }
+
+/* EXAMPLE SHELL: toast */
+.toast { padding: 12px 18px; border-radius: 12px; background: #111318; color: #ffffff; font-weight: 500; box-shadow: 0 12px 30px rgba(17, 19, 24, 0.25); white-space: nowrap; }
+.toast.mini { display: inline-block; }

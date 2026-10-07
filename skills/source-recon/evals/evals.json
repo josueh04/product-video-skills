@@ -1,0 +1,23 @@
+{
+  "skill_name": "source-recon",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I just set up examples/acme. Pull in the frontend and tell me which files the 'board' and 'today view' screens of the pitch video come from.",
+      "expected_output": "Runs fetch_sources.py on the product, reports the locked commit and any freshness notes, states how the production commit was confirmed (or asks one closed question), maps both screens with read-only subagents reading sources/frontend, and writes videos/pitch/SOURCES.md with route, components, strings, state and role/path:line@sha citations.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "The web team shipped a redesign of the settings page last week. Which of my acme videos do I need to redo?",
+      "expected_output": "Runs changed_since.py, lists the videos and kit files whose citations point at changed files (marking lines changed), and proposes fetch_sources.py --refresh plus re-running ui-spec-from-code only for the affected screens, without moving the lock on its own.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "my local checkout of the app is on main but I think prod deploys from develop, can you check before we start the docs video?",
+      "expected_output": "Reads branch dates, worktrees, merge-base and the deploy workflow without touching the checkout, reports which commit is most likely deployed and on what evidence, recommends a branch with a closed question, and after confirmation updates the branch in product.yaml and refreshes that role.",
+      "files": []
+    }
+  ]
+}

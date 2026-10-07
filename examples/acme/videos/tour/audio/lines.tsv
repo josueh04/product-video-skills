@@ -1,0 +1,6 @@
+id	role	speed	text
+# one clip per sentence; build.py anchors beats to these words
+N1	narrator	0.95	Maya runs Northwind Bakery, and her day starts in Acme Tasks.
+N2	narrator	1.0	One click on Plan my day puts every task in order by time.
+N3	narrator	1.0	Add a task with a time, and it lands in the right slot.
+N4	narrator	0.95	Acme Tasks is the to-do list that plans your day.

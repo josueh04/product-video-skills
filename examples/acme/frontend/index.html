@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Acme Tasks</title>
+  <meta name="description" content="The to-do list that plans your day.">
+  <link rel="icon" href="assets/app-tile.svg">
+  <link rel="stylesheet" href="styles/app.css">
+</head>
+<body>
+  <div class="shell">
+    <!-- Sidebar: brand and navigation -->
+    <aside class="sidebar">
+      <div class="brand">
+        <img src="assets/app-tile.svg" alt="">
+        <span class="brand-name" data-i18n="app.name">Acme Tasks</span>
+      </div>
+      <nav class="nav">
+        <button class="nav-item is-active" data-route="today"><span class="icon" data-icon="sun"></span><span data-i18n="nav.today">Today</span></button>
+        <button class="nav-item" data-route="upcoming"><span class="icon" data-icon="calendar"></span><span data-i18n="nav.upcoming">Upcoming</span></button>
+        <button class="nav-item" data-route="projects"><span class="icon" data-icon="folder"></span><span data-i18n="nav.projects">Projects</span></button>
+      </nav>
+    </aside>
+
+    <!-- Today screen (the default route) -->
+    <main class="main" id="today">
+      <header class="page-head">
+        <h1 class="page-title" data-i18n="today.title">Today</h1>
+        <span class="page-date" id="todayDate"></span>
+        <div class="page-actions">
+          <button class="btn btn-secondary" id="addTaskBtn"><span class="icon" data-icon="plus"></span><span data-i18n="today.add">Add task</span></button>
+          <button class="btn btn-primary" id="planBtn"><span class="icon" data-icon="sparkle"></span><span data-i18n="today.plan">Plan my day</span></button>
+        </div>
+      </header>
+      <div class="list-meta">
+        <span id="taskCount"></span>
+        <span class="planned-chip" id="plannedChip" hidden><span class="icon" data-icon="clock"></span><span data-i18n="today.planned">Planned by time</span></span>
+      </div>
+      <ul class="task-list" id="taskList"></ul>
+      <p class="empty" id="emptyState" hidden data-i18n="today.empty">Nothing planned yet</p>
+    </main>
+  </div>
+
+  <!-- Add task dialog -->
+  <div class="dialog-backdrop" id="addDialog" hidden>
+    <form class="dialog" id="addForm" role="dialog" aria-labelledby="addDialogTitle">
+      <div class="dialog-head">
+        <h2 class="dialog-title" id="addDialogTitle" data-i18n="dialog.title">New task</h2>
+        <button type="button" class="icon-btn" id="addClose" aria-label="Close"><span class="icon" data-icon="x"></span></button>
+      </div>
+      <label class="field">
+        <span class="field-label" data-i18n="dialog.name">Task</span>
+        <input class="input" name="task" autocomplete="off" required placeholder="What needs doing?" data-i18n-placeholder="dialog.name.placeholder">
+      </label>
+      <div class="field-row">
+        <label class="field field-time">
+          <span class="field-label" data-i18n="dialog.time">Time</span>
+          <input class="input" name="time" autocomplete="off" placeholder="e.g. 3:00 PM" data-i18n-placeholder="dialog.time.placeholder">
+        </label>
+        <label class="field field-project">
+          <span class="field-label" data-i18n="dialog.project">Project</span>
+          <select class="input" name="project">
+            <option value="">No project</option>
+            <option>Orders</option>
+            <option>Supplies</option>
+            <option>Kitchen</option>
+            <option>Office</option>
+          </select>
+        </label>
+      </div>
+      <div class="dialog-foot">
+        <button type="button" class="btn btn-ghost" id="addCancel" data-i18n="dialog.cancel">Cancel</button>
+        <button type="submit" class="btn btn-primary" data-i18n="dialog.submit">Add task</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="toast" id="toast" role="status" hidden></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

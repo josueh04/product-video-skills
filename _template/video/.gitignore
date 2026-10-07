@@ -1,0 +1,10 @@
+audio/raw/
+video/node_modules/
+video/renders/
+video/snapshots/
+video/audio/
+video/assets/fonts/
+qa/sheets/
+qa/strips/
+*.mp4
+.DS_Store

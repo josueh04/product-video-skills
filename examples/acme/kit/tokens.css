@@ -1,0 +1,42 @@
+/* Design tokens resolved to literal values by resolve_tokens.py from frontend@1318473. Regenerate instead of editing.
+   Each value cites where it is defined; 'via' lists the tokens it was resolved through. */
+/* scope: :root */
+:root {
+  --acme-color-accent: #0e7c6b; /* frontend/styles/tokens.css:4@1318473 */
+  --acme-color-accent-hover: #0b6a5b; /* frontend/styles/tokens.css:5@1318473 */
+  --acme-color-accent-soft: #e9f6f3; /* frontend/styles/tokens.css:6@1318473 */
+  --acme-color-bg: #f7f7f5; /* frontend/styles/tokens.css:7@1318473 */
+  --acme-color-surface: #ffffff; /* frontend/styles/tokens.css:8@1318473 */
+  --acme-color-border: #e4e4e0; /* frontend/styles/tokens.css:9@1318473 */
+  --acme-color-border-strong: #c9cac4; /* frontend/styles/tokens.css:10@1318473 */
+  --acme-color-text: #1c1d1f; /* frontend/styles/tokens.css:11@1318473 */
+  --acme-color-muted: #6b6f76; /* frontend/styles/tokens.css:12@1318473 */
+  --acme-color-on-accent: #ffffff; /* frontend/styles/tokens.css:13@1318473 */
+  --acme-color-backdrop: rgba(28, 29, 31, 0.36); /* frontend/styles/tokens.css:14@1318473 */
+  --acme-color-toast: #1c1d1f; /* frontend/styles/tokens.css:15@1318473 */
+  --acme-color-focus: #0e7c6b; /* frontend/styles/tokens.css:16@1318473 via --acme-color-accent (frontend/styles/tokens.css:4@1318473) */
+  --acme-font-sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif; /* frontend/styles/tokens.css:19@1318473 */
+  --acme-text-sm: 13px; /* frontend/styles/tokens.css:20@1318473 */
+  --acme-text-md: 15px; /* frontend/styles/tokens.css:21@1318473 */
+  --acme-text-lg: 18px; /* frontend/styles/tokens.css:22@1318473 */
+  --acme-text-xl: 30px; /* frontend/styles/tokens.css:23@1318473 */
+  --acme-space-1: 4px; /* frontend/styles/tokens.css:26@1318473 */
+  --acme-space-2: 8px; /* frontend/styles/tokens.css:27@1318473 */
+  --acme-space-3: 12px; /* frontend/styles/tokens.css:28@1318473 */
+  --acme-space-4: 16px; /* frontend/styles/tokens.css:29@1318473 */
+  --acme-space-6: 24px; /* frontend/styles/tokens.css:30@1318473 */
+  --acme-space-8: 32px; /* frontend/styles/tokens.css:31@1318473 */
+  --acme-radius-sm: 6px; /* frontend/styles/tokens.css:32@1318473 */
+  --acme-radius-md: 10px; /* frontend/styles/tokens.css:33@1318473 */
+  --acme-radius-lg: 16px; /* frontend/styles/tokens.css:34@1318473 */
+  --acme-sidebar-width: 232px; /* frontend/styles/tokens.css:35@1318473 */
+  --acme-row-height: 56px; /* frontend/styles/tokens.css:36@1318473 */
+  --acme-row-gap: 8px; /* frontend/styles/tokens.css:37@1318473 */
+  --acme-shadow-row: 0 1px 2px rgba(28, 29, 31, 0.04); /* frontend/styles/tokens.css:40@1318473 */
+  --acme-shadow-dialog: 0 24px 60px rgba(28, 29, 31, 0.22); /* frontend/styles/tokens.css:41@1318473 */
+  --acme-shadow-toast: 0 12px 30px rgba(28, 29, 31, 0.25); /* frontend/styles/tokens.css:42@1318473 */
+  --acme-duration-fast: 120ms; /* frontend/styles/tokens.css:45@1318473 */
+  --acme-duration-base: 200ms; /* frontend/styles/tokens.css:46@1318473 */
+  --acme-duration-plan: 420ms; /* frontend/styles/tokens.css:47@1318473 */
+  --acme-ease-out: cubic-bezier(0.2, 0, 0, 1); /* frontend/styles/tokens.css:48@1318473 */
+}

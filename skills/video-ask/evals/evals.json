@@ -1,0 +1,23 @@
+{
+  "skill_name": "video-ask",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "/video-ask",
+      "expected_output": "Runs status.py and shows the setup state, the products and videos with their stages, where the session is, and one 'Next:' command. Does not start any work.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "/video-ask what is left before I can send the acme pitch video to the reviewer?",
+      "expected_output": "Runs status.py for examples/acme (or products/acme), names the pitch video's stage, explains the remaining stages up to delivered (QA must pass on the newest render, deliver.py refuses otherwise), and gives the next command.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "/video-ask why can't I build? I'm in products/acme/videos/onboarding",
+      "expected_output": "Reports the video at stage 'brief unsigned', explains that the reviewer must sign COVERAGE.md and CLAIMS.md in the BRIEF frontmatter before a non-draft build, and why (features agreed before building), without editing the signatures itself.",
+      "files": []
+    }
+  ]
+}

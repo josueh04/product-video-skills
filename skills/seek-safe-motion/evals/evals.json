@@ -1,0 +1,23 @@
+{
+  "skill_name": "seek-safe-motion",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Add a chapter title to products/acme/videos/pitch/video/src/template.tpl that slides up through a mask at the word 'plans' and fades out before the next screen.",
+      "expected_output": "Writes the tween as a fromTo whose toVars repeats every fromVars key (or set + to), with immediateRender false, changes display only with tl.set, derives times from the build's word anchors, and runs lint_motion.py on the video folder with 0 errors before rendering.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Review the timeline code in this HyperFrames composition before I render it; last time a card disappeared on some frames of the MP4.",
+      "expected_output": "Runs lint_motion.py, explains each finding with its why (three interleaved workers, the 1 ms step back on seek), proposes the fixed code, and suggests snapshot --at t0,t1 vs --at t1 for any tween the lint cannot check.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "I want the typing in the Acme Tasks demo to look human, with random gaps between keystrokes, and a call timer that counts up on screen.",
+      "expected_output": "Uses a seeded PRNG for keystroke gaps (never Math.random) with one tl.set per character, computes the timer text from tl.time() in onUpdate (never Date), and confirms with lint_motion.py.",
+      "files": []
+    }
+  ]
+}

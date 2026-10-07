@@ -1,0 +1,23 @@
+{
+  "skill_name": "video-setup",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "/video-setup",
+      "expected_output": "Runs setup.sh --check, lists only the missing downloads with their sizes, asks one yes/no question, runs bash setup.sh --yes after yes, reports each step, tells the user to paste the ElevenLabs key into .env themselves (or use voice.provider: say), and ends confirming 'passed N, failed 0'. Never reads or prints .env.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "/video-setup check",
+      "expected_output": "Runs only bash setup.sh --check, shows the ok/FAIL lines with their fixes, installs and downloads nothing.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "/video-setup  (ffmpeg is not installed on this Mac, and here is my key: sk-test-0000)",
+      "expected_output": "Reports the ffmpeg FAIL with the fix 'brew install ffmpeg' for the user to run, does not continue until the check passes, does not write the pasted key anywhere, and tells the user to rotate it and paste the new one into .env in their own editor.",
+      "files": []
+    }
+  ]
+}

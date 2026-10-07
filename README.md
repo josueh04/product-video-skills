@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/status-work%20in%20progress-orange" alt="status: work in progress">
+  <img src="https://img.shields.io/badge/status-alpha-orange" alt="status: alpha">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-Apache%202.0-blue" alt="license: Apache 2.0"></a>
   <img src="https://img.shields.io/badge/Claude%20Code-2.1%2B-d97757" alt="Claude Code 2.1+">
   <img src="https://img.shields.io/badge/node-%3E%3D22-brightgreen" alt="node >= 22">
@@ -31,7 +31,7 @@ No screen recordings and no invented UI. The skills rebuild your interface 1:1 i
 They come out of a real production: five narrated product demos, 26 versions and 33 renders. Every rule in them exists because something went wrong without it.
 
 > [!IMPORTANT]
-> **Work in progress: the skills are being written.** This README is the design, and nothing is installable yet. The [Roadmap](#roadmap) says what exists today.
+> **Alpha.** All 15 skills, the setup and the self-check work, and a fictional example product renders end to end on macOS. Only one real product has been through the pipeline so far, and only the Angular with PrimeNG adapter is proven. The [Roadmap](#roadmap) says what is next.
 
 ## Installation (15-minute setup)
 
@@ -68,7 +68,7 @@ The first time, it:
 - Installs HyperFrames at the pinned version, its rendering Chrome and its agent skills, all from the same release
 - Creates the Python environment and downloads the speech model the QA uses
 - Asks you to paste your ElevenLabs key into `.env` yourself, never into the chat
-- Renders the example video and runs QA on it. It must end with `passed N, failed 0`
+- Runs the self-check (it must end with `passed N, failed 0`), then voices, renders and QA-checks the fictional example video
 
 It tells you what it will download and asks before installing anything. Prefer a terminal? `bash setup.sh` runs the same installs.
 
@@ -119,28 +119,26 @@ cd products/acme && claude
 
 Like [mattpocock/skills](https://github.com/mattpocock/skills), these split on one axis: who can invoke them. **User-invoked** skills run only when you type them, and they orchestrate. **Model-invoked** skills hold one discipline each, and the agent reaches for them when the task fits. A user-invoked skill may call model-invoked skills but never another user-invoked one, so the agent can't create a product or deliver a video on its own.
 
-None of them has shipped yet. Each name will link to its `SKILL.md` when it does.
-
 ### User-invoked
 
-- **video-setup**: Check the machine, install the pinned toolchain and render the example. Safe to run again; `/video-setup check` only reports.
-- **video-ask**: Which product and video this session is on, at which stage, and what to type next.
-- **product-new**: Interview, then create a product folder with its kit: tokens, fonts, icons, logos, fictional cast, names and pronunciations.
-- **video-new**: Write the brief, the feature coverage matrix and the claims sheet, then stop for sign-off.
-- **video-build**: Coordinate the build with subagents: product truth, UI specs, voice, composition, render, QA and delivery. It coordinates and never builds itself.
-- **video-review**: Turn a batch of feedback into one fix per video, run them in parallel, check them and deliver the next version.
+- **[video-setup](skills/video-setup/SKILL.md)**: Check the machine, install the pinned toolchain and render the example. Safe to run again; `/video-setup check` only reports.
+- **[video-ask](skills/video-ask/SKILL.md)**: Which product and video this session is on, at which stage, and what to type next.
+- **[product-new](skills/product-new/SKILL.md)**: Interview, then create a product folder with its kit: tokens, fonts, icons, logos, fictional cast, names and pronunciations.
+- **[video-new](skills/video-new/SKILL.md)**: Write the brief, the feature coverage matrix and the claims sheet, then stop for sign-off.
+- **[video-build](skills/video-build/SKILL.md)**: Coordinate the build with subagents: product truth, UI specs, voice, composition, render, QA and delivery. It coordinates and never builds itself.
+- **[video-review](skills/video-review/SKILL.md)**: Turn a batch of feedback into one fix per video, run them in parallel, check them and deliver the next version.
 
 ### Model-invoked
 
-- **product-kit**: Extract what every video of a product reuses: tokens, fonts, icon subsets, logos, the fictional cast, names and pronunciations.
-- **source-recon**: Map each screen of the brief to its route and components, and check that the copy of the code matches production.
-- **product-truth**: Back every sentence and every screen with a source, or cut it.
-- **ui-spec-from-code**: One read-only subagent per screen returns static HTML, CSS with literal values and citations, and transitions with their timings. One adapter per framework; Angular with PrimeNG is the only one proven so far.
-- **ui-reference-capture**: For UI without code: frames and timed OCR from screen recordings, a local instance of the app, or research on third-party apps.
-- **script-and-voice**: The script as `lines.tsv` with one clip per sentence, word timings, pronunciation fixes, sound effects and loudness.
-- **ui-demo-composer**: The stage (camera, focus, titles, cursors, typing, pop-ups, end screen) and the build that anchors every beat to a word.
-- **seek-safe-motion**: The animation rules that keep parallel render workers from dropping or flickering elements.
-- **render-qa**: Automatic checks, contact sheets, frame strips, and parity against the approved version.
+- **[product-kit](skills/product-kit/SKILL.md)**: Extract what every video of a product reuses: tokens, fonts, icon subsets, logos, the fictional cast, names and pronunciations.
+- **[source-recon](skills/source-recon/SKILL.md)**: Map each screen of the brief to its route and components, and check that the copy of the code matches production.
+- **[product-truth](skills/product-truth/SKILL.md)**: Back every sentence and every screen with a source, or cut it.
+- **[ui-spec-from-code](skills/ui-spec-from-code/SKILL.md)**: One read-only subagent per screen returns static HTML, CSS with literal values and citations, and transitions with their timings. One adapter per framework; Angular with PrimeNG is the only one proven so far.
+- **[ui-reference-capture](skills/ui-reference-capture/SKILL.md)**: For UI without code: frames and timed OCR from screen recordings, a local instance of the app, or research on third-party apps.
+- **[script-and-voice](skills/script-and-voice/SKILL.md)**: The script as `lines.tsv` with one clip per sentence, word timings, pronunciation fixes, sound effects and loudness.
+- **[ui-demo-composer](skills/ui-demo-composer/SKILL.md)**: The stage (camera, focus, titles, cursors, typing, pop-ups, end screen) and the build that anchors every beat to a word.
+- **[seek-safe-motion](skills/seek-safe-motion/SKILL.md)**: The animation rules that keep parallel render workers from dropping or flickering elements.
+- **[render-qa](skills/render-qa/SKILL.md)**: Automatic checks, contact sheets, frame strips, and parity against the approved version.
 
 ## What Your Product Needs to Provide
 
@@ -159,13 +157,13 @@ The skills never ask for tokens or passwords: they use the git access your machi
 
 ## Roadmap
 
-| Phase | What | Done when |
+| Phase | What | Status |
 |---|---|---|
-| 1. Skeleton | `setup.sh`, `/video-setup`, `/video-ask`, the rules, hooks, templates, a fictional example product and the self-check | Someone else, on another Mac, goes from clone to the example MP4 in under 15 minutes without help |
-| 2. Port what's proven | One TTS client, the QA scripts with their gates, the stage kit and the build library | A video from the original production rebuilt from this repo, with the same QA and parity under 1.0 |
-| 3. Orchestrators | `/product-new`, `/video-new`, `/video-build`, `/video-review` and the research skills | A new video built end to end from this repo |
-| 4. Pilot | Someone outside the project, with their own product and another frontend framework | It works by changing only `product.yaml` and a framework adapter |
-| 5. Distribution | A Claude Code plugin, `npx skills add`, Codex, long tutorials, other languages | `claude plugin validate . --strict` passes |
+| 1. Skeleton | `setup.sh`, `/video-setup`, `/video-ask`, the rules, hooks, templates, a fictional example product and the self-check | Done on macOS. Not yet tried on a fresh machine by someone else |
+| 2. Port what's proven | One TTS client, the QA scripts with their gates, the stage kit and the build library | Done. QA reproduces the original production's numbers on one of its renders |
+| 3. Orchestrators | `/product-new`, `/video-new`, `/video-build`, `/video-review` and the research skills | Written and unit-tested. The example ran through every stage; the subagent dispatch of `/video-build` has not run end to end yet |
+| 4. Pilot | Someone outside the project, with their own product and another frontend framework | Next. Done when it works by changing only `product.yaml` and a framework adapter |
+| 5. Distribution | A Claude Code plugin, `npx skills add`, Codex, long tutorials, other languages | Later. Done when `claude plugin validate . --strict` passes |
 
 ## License
 

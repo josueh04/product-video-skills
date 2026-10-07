@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "deny": [
+      "Read(**/.env)",
+      "Read(**/.env.local)",
+      "Read(**/.env.*.local)",
+      "Read(**/.env.development)",
+      "Read(**/.env.production)",
+      "Read(**/.env.test)",
+      "Read(**/.env.staging)",
+      "Read(**/.env.bak)",
+      "Read(**/.env.backup)",
+      "Read(**/.env.old)",
+      "Bash(*hyperframes upgrade*)",
+      "Bash(*hyperframes@* upgrade*)",
+      "Bash(*skills update*)"
+    ],
+    "allow": [
+      "Bash(bin/pvs-py *)",
+      "Bash(./bin/pvs-py *)",
+      "Bash(*/bin/pvs-py *)",
+      "Bash(npx --yes hyperframes@0.8.134 check*)",
+      "Bash(npx --yes hyperframes@0.8.134 snapshot*)",
+      "Bash(npx --yes hyperframes@0.8.134 render*)",
+      "Bash(npx hyperframes@0.8.134 check*)",
+      "Bash(npx hyperframes@0.8.134 snapshot*)",
+      "Bash(npx hyperframes@0.8.134 render*)",
+      "Bash(npm run check*)",
+      "Bash(npm run render*)",
+      "Bash(npm run doctor*)",
+      "Bash(ffmpeg *)",
+      "Bash(ffprobe *)",
+      "Bash(bash setup.sh --check)",
+      "Bash(bash */setup.sh --check)",
+      "Bash(bash tests/run.sh*)",
+      "Bash(bash */tests/run.sh*)",
+      "Bash(bash scripts/link-skills.sh*)",
+      "Bash(bash */scripts/link-skills.sh*)"
+    ]
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume|clear|compact",
+        "hooks": [
+          { "type": "command", "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/session-start.sh\"", "timeout": 15 }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit|NotebookEdit|Bash|Read|Grep",
+        "hooks": [
+          { "type": "command", "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/guard.sh\"", "timeout": 10 }
+        ]
+      }
+    ]
+  }
+}

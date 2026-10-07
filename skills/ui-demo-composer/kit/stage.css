@@ -1,0 +1,74 @@
+/* ============================================================================
+   ui-demo-composer stage kit: the layers every product demo shares.
+
+   #root > #stage > #camera > #blurWrap > #app      (app space, scaled once)
+                  > #veil, .pvs-ttl, #endS, #lock, #fade   (screen space, 1920x1080)
+
+   The product UI is rebuilt at its real logical viewport (product.yaml
+   app_canvas.logical) and scaled to 1920x1080 by a single transform on #app,
+   so production CSS keeps its literal pixel values. buildlib.py writes the
+   --pvs-app-* variables; tokens.css may override any --pvs-* value.
+   Never tween #app or #stage: the camera moves #camera, focus moves #blurWrap.
+   ========================================================================== */
+:root {
+  --pvs-accent: #4f46e5;
+  --pvs-font: system-ui, sans-serif;
+  --pvs-bg: #000;
+  --pvs-veil: rgba(8, 8, 9, 0.62);
+  --pvs-blur: 14px;
+  --pvs-title: #f3f3f3;
+  --pvs-sub: #cfcfcf;
+  --pvs-muted: #9a9a9a;
+  --pvs-backdrop: rgba(63, 63, 63, 0.7);
+  --pvs-cursor-fill: #fff;
+  --pvs-cursor-stroke: #111;
+  --pvs-ripple: rgba(255, 255, 255, 0.85);
+  --pvs-end-bg: rgba(8, 8, 9, 0.35);
+  --pvs-card-bg: rgba(255, 255, 255, 0.06);
+  --pvs-card-border: rgba(255, 255, 255, 0.12);
+  --pvs-app-w: 1440px;
+  --pvs-app-h: 810px;
+  --pvs-app-k: 1.333333;
+  --pvs-app-x: 0px;
+  --pvs-app-y: 0px;
+}
+
+html, body { margin: 0; padding: 0; width: 1920px; height: 1080px; overflow: hidden; background: var(--pvs-bg); }
+#root { position: relative; width: 100%; height: 100%; overflow: hidden; background: var(--pvs-bg); font-family: var(--pvs-font); }
+#stage { position: absolute; inset: 0; overflow: hidden; }
+#camera { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; transform-origin: 0 0; }
+#blurWrap { position: absolute; inset: 0; }
+#app {
+  position: absolute; left: var(--pvs-app-x); top: var(--pvs-app-y);
+  width: var(--pvs-app-w); height: var(--pvs-app-h);
+  transform-origin: 0 0; transform: scale(var(--pvs-app-k));
+  overflow: hidden;
+}
+
+/* ---------- cursor and click ripple: last children of #app, in app pixels ---------- */
+.pvs-cur { position: absolute; left: 0; top: 0; width: 22px; height: 30px; z-index: 9999; pointer-events: none; }
+.pvs-cur svg { display: block; width: 22px; height: 30px; }
+.pvs-cur path { fill: var(--pvs-cursor-fill); stroke: var(--pvs-cursor-stroke); }
+.pvs-rip { position: absolute; left: 0; top: 0; width: 34px; height: 34px; margin: -17px 0 0 -17px; border-radius: 50%; border: 2px solid var(--pvs-ripple); opacity: 0; z-index: 9998; pointer-events: none; }
+
+/* ---------- pop-ups: centred at natural size inside #app, like the real app ---------- */
+.pvs-modal { position: absolute; inset: 0; display: none; align-items: center; justify-content: center; z-index: 900; }
+.pvs-modal > .pvs-backdrop { position: absolute; inset: 0; background: var(--pvs-backdrop); }
+.pvs-modal > .pvs-box { position: relative; }
+
+/* ---------- toasts: a slot at the bottom centre of #app ---------- */
+.pvs-toast-slot { position: absolute; left: 0; right: 0; bottom: 24px; display: flex; justify-content: center; pointer-events: none; z-index: 950; }
+.pvs-toast-slot.top-right { top: 24px; bottom: auto; justify-content: flex-end; padding-right: 24px; }
+.pvs-toast { display: block; opacity: 0; }
+
+/* ---------- scroll: a viewport with a moving inner column ---------- */
+.pvs-scroll { position: relative; overflow: hidden; }
+.pvs-scroll > .pvs-scroll-in { position: relative; }
+
+/* ---------- screen-space layers ---------- */
+#veil { position: absolute; inset: 0; background: var(--pvs-veil); pointer-events: none; }
+#fade { position: absolute; inset: 0; background: #000; pointer-events: none; }
+
+/* inline icons injected at build time from kit/icons and src/icons */
+.pvs-ic { display: inline-flex; width: 1em; height: 1em; line-height: 0; vertical-align: middle; }
+.pvs-ic svg { width: 100%; height: 100%; }
